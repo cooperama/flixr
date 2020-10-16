@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 var db = require('./config/keys').mongoURI;
 
 // ---------------------- Connect to Mongo
-const connectionString = process.env.MONGODB_URI
+const connectionString = 'mongodb://localhost:27017/flixr';
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
