@@ -1,5 +1,5 @@
 // -----------------------------------Show Page JS
-
+// referenced this project's code: https://codepen.io/piupiupiu/full/YyxWpd
 var Gallery = (function() {
     var colors = ['#34495E', '#2E4053', '#283747', '#212F3C', '#1B2631', '#2C3E50', '#273746'];
     var scrollTimeId;
