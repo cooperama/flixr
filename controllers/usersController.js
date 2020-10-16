@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const moment = require('moment');
 
 // Load the user model
 const User = require('../models/User');
-const { forwardAuthenticated } = require('../config/auth');
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('users/login'));
@@ -93,6 +94,18 @@ router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You have logged out');
   res.redirect('./login');
+});
+
+// Settings Page
+router.get('/settings', ensureAuthenticated, (req, res) => {
+  // console.log(req.user._id);
+  console.log(req.user);
+  console.log('***************')
+  const context = {
+    user: req.user,
+    moment
+  }
+  res.render('users/settings', context)
 });
 
 module.exports = router;
