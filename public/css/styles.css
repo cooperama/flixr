@@ -675,6 +675,34 @@ textarea {
   background-color: rgba(0,0,0,.2);
 }
 
+.scroll-div {
+  position: fixed;
+  z-index: 2000;
+  top: 2%;
+  left: 45%;
+}
+
+#scroll-msg, .scroll-icon {
+  font-size: 2rem;
+  color:  #FFFFFF;
+  animation: pulsate 2s ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulsate {
+  /* This effect will apply to start game message */
+  0% {
+      opacity: 0.3;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0.3;
+  }
+}
+
+
 /* DEMO 3 */
 /* https://jsfiddle.net/bootstrapious/sqe028y1/ */
 .hover-3::after {
