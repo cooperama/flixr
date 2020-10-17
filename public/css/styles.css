@@ -132,10 +132,13 @@ dl, ol, ul {
 }
 
 .astronaut {
+  margin-left: 4rem;
+}
+
+.astronaut, .astronaut_ramen {
   background-color: white;
   border-radius: 50%;
   width: 30%;
-  margin-left: 4rem;
   border-color: #B69EE6;
   border-style: groove;
 }
