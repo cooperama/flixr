@@ -9,6 +9,8 @@ const User = require('../models/User');
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 const { db } = require('../models/User');
 
+// Reference Source: https://www.youtube.com/watch?v=6FOq4cUdH8k
+
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('users/login'));
 
