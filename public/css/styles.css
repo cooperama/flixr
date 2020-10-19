@@ -302,6 +302,11 @@ main.col.px-4.px-lg-5.pt-5 {
   padding: .5rem 1.5rem !important;
 }
 
+.playlist-timestamp {
+  right: 2%;
+  top: 10%;
+}
+
 /*=================================*/
 /*    Movies/Recommendations Page  */
 /*=================================*/

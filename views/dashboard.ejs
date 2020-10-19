@@ -33,10 +33,10 @@
                                                     <p class="mt-1 text-truncate"><%= playlist.description %></p>
                                                     <!-- needs different view.... -->
                                                     <a href="/playlists/<%= playlist._id %>" class="btn btn-sm btn-outline-secondary align-bottom ml-3">View Playlist</a></p>
-                                                    <span class="float-right text-light small"><%= moment(playlist.createdAt).format("dddd, MMM Do, YYYY") %></span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <span class="float-right text-light small playlist-timestamp"><%= moment(playlist.createdAt).format("dddd, MMM Do, YYYY") %></span>
                                     </div>
                                 </div>
                                 <% }) %>
