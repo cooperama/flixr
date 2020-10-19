@@ -24,7 +24,7 @@
                                 <% } else { %>
                                     <div class="carousel-item">
                                     <% } %>
-                                    <div class="card bg-transparent border-0">
+                                    <div class="card bg-transparent w-100 border-0">
                                         <div class="d-flex align-items-center">
                                             <div class="flex-grow-1">
                                                 <div class="card-body text-left">
@@ -33,9 +33,11 @@
                                                     <p class="mt-1 text-truncate"><%= playlist.description %></p>
                                                     <!-- needs different view.... -->
                                                     <a href="/playlists/<%= playlist._id %>" class="btn btn-sm btn-outline-secondary align-bottom ml-3">View Playlist</a></p>
+                                                    <span class="float-right text-light small"><%= moment(playlist.createdAt).format("dddd, MMM Do, YYYY") %></span>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="recent-posters" style="background-image: url('http://image.tmdb.org/t/p/w500<%= movies[i].poster_path %>');" alt="<%= movies[i].poster_path %>"></div>
                                     </div>
                                 </div>
                                 <% }) %>
