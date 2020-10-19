@@ -9,7 +9,6 @@ const moment = require('moment');
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('users/login'));
 
-
 // Dashboard -- Playlist Index Page
 router.get('/dashboard', ensureAuthenticated, async (req, res) => {
   try {
@@ -33,6 +32,5 @@ router.get('/dashboard', ensureAuthenticated, async (req, res) => {
     res.render('404');
   }
 })
-
 
 module.exports = router;

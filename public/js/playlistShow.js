@@ -71,3 +71,16 @@ var Gallery = (function() {
         list: '.playlist-gallery'
     }).init();
   });
+
+/*=================================*/
+/*    Hide/Show Element Function   */
+/*=================================*/
+function toggleDiv() {
+    var x = document.getElementById("pi-info-div");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+  }
+  

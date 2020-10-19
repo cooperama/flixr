@@ -1,7 +1,6 @@
-/*===============*/
-/* Global Styles */
-/*===============*/
-
+/*=================================*/
+/*          Global Styles          */
+/*=================================*/
 :root {
   --bg-gradient: linear-gradient(269deg, #1b1a2e, #190c3e);
   --bg-dark: hsl(261, 92%, 5%);
@@ -53,10 +52,9 @@ dl, ol, ul {
   margin-bottom: 0;
 }
 
-/*==============*/
-/* Login Screen */
-/*==============*/
-
+/*=================================*/
+/*          Login Screen           */
+/*=================================*/
 .flixr-logo {
   margin-left: 7.1rem !important;
   width: 150px;
@@ -162,9 +160,9 @@ dl, ol, ul {
   color:#373085;
 }
 
-/*==============*/
-/*  Dashboard   */
-/*==============*/
+/*=================================*/
+/*             Dashboard           */
+/*=================================*/
 .card-header:first-child, .nav-tabs {
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, #373085, #F3F2FF, #373085);
@@ -304,7 +302,9 @@ main.col.px-4.px-lg-5.pt-5 {
   padding: .5rem 1.5rem !important;
 }
 
-/* ***************** Movies/Recommendations Page */
+/*=================================*/
+/*    Movies/Recommendations Page  */
+/*=================================*/
 .create-playlist-form {
   display: none;
 }
@@ -352,7 +352,6 @@ textarea {
 /*=================================*/
 /*        Review Movies Styles     */
 /*=================================*/
-
 #review-playlist {
   margin: 0 2rem !important;
 }
@@ -367,7 +366,6 @@ textarea {
   background-color: #05AFF2;
   border-color: #fff;
 }
-
 
 .review-movies {
   display: none;
@@ -426,12 +424,9 @@ textarea {
   padding-left: 20px;
 }
 
-
 /*=========================================*/
 /*                Edit Page                */
 /*=========================================*/
-
-
 .movie-id-checkbox {
   display: none;
 }
@@ -444,8 +439,6 @@ textarea {
 .movie-id-checkbox + label {
   border: 5px solid transparent;
 }
-
-
 
 .edit-playlist-container {
   display: flex;
@@ -485,7 +478,6 @@ textarea {
 .selected-movie-div img {
   width: 100%;
 }
-
 
 /*=========================================*/
 /*                Show Page                */

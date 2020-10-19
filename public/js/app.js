@@ -1,4 +1,6 @@
-// -------------- Genre Tracking Objects
+/*=================================*/
+/*     Genre Tracking Objects      */
+/*=================================*/
 
 const genreCount = {
   28: 0,
@@ -401,7 +403,9 @@ const comparisonOptions = [
   ['sweet', 'spicy']
 ];
 
-// -------------- Search Criteria Functions
+/*=================================*/
+/*    Search Criteria Functions    */
+/*=================================*/
 function randomIndexGenerator(arr) {
   return Math.floor(Math.random() * arr.length);
 }
@@ -550,8 +554,9 @@ function addQueryParams(choice) {
   }
 }
 
-
-// -------------- Functions
+/*=================================*/
+/*       Add Movies Functions      */
+/*=================================*/
 
 function confirmDelete() {
   document.getElementById('delete-button').classList.add('hide-content');
@@ -567,6 +572,22 @@ async function confirmAdd() {
   movieAlertH2.innerText = 'movie added!';
   await sleep(500);
   movieAlertH2.innerText = 'click a movie to add it to your playlist';
+}
+
+/*=================================*/
+/*       Settings Functions        */
+/*=================================*/
+function toggleImageForm() {
+  document.querySelector('.changeImage').classList.toggle('hide-content');
+  document.querySelector('.imgBtn').classList.toggle('hide-content')
+}
+
+function setImageSrc(event) {
+  // document.getElementById("s-prevent").addEventListener("click", function(event){
+  //   event.preventDefault()
+  // });
+  const userImageEl = document.querySelector('.profile-photo');
+  userImageEl.setAttribute('src', `/images/${event.target.files[0].name}`)
 }
 
 // -------------- Event Listeners
@@ -607,11 +628,10 @@ if (quizletEl) {
       queryParams = {"vote_count_gte": 100};
   
       const submitBtn = document.createElement('button');
-      submitBtn.innerText = 'get movies';
-      submitBtn.setAttribute('type', 'submit');
-      submitBtn.classList.add("btn", "btn-outline-primary", "mr-3");
-      quizletEl.appendChild(submitBtn);
-
+        submitBtn.innerText = 'get movies';
+        submitBtn.setAttribute('type', 'submit');
+        submitBtn.classList.add("btn", "btn-outline-primary", "mr-3");
+        quizletEl.appendChild(submitBtn);
 
     } else {
       questionIndex++;
@@ -630,8 +650,9 @@ if (reviewBtn) {
   })
 }
 
-
-// -------------- Movie Recommendations Carousel
+/*=================================*/
+/*  Movie Recommendations Carousel */
+/*=================================*/
 $('#movieCarousel .carousel-item').each(function(){
   var minPerSlide = 3;
   var next = $(this).next();
@@ -650,7 +671,6 @@ $('#movieCarousel .carousel-item').each(function(){
   }
 });
 
-
 if (movieCarousel) {
   const moviePlaylist = [];
   let movieIdStrings = '';
@@ -658,9 +678,9 @@ if (movieCarousel) {
   // listen for clicks on movie posters
   movieCarousel.addEventListener('click', (e) => {
     const imgNode = e.target.parentElement.firstElementChild.firstElementChild;
-    if (imgNode.nodeName.toLowerCase() === 'img') {
-        // alert user that the movie they clicked was added
-        confirmAdd();
+      if (imgNode.nodeName.toLowerCase() === 'img') {
+          // alert user that the movie they clicked was added
+          confirmAdd();
       // ensures clicked movies are only added once
       if (!moviePlaylist.includes(imgNode.alt)) {
         // build up string to pass into playlist model for parsing later
@@ -670,24 +690,14 @@ if (movieCarousel) {
         moviePlaylist.push(imgNode.alt);
         // create elements for movie review carousel
         const movieSpan = document.createElement('span')
-        movieSpan.setAttribute("style", "--i:"+`${styleNumber}`)
+          movieSpan.setAttribute("style", "--i:"+`${styleNumber}`)
         const addedMovie = document.createElement('img')
-        addedMovie.setAttribute('src', imgNode.currentSrc)
-        addedMovie.setAttribute('alt', imgNode.alt)      
-        document.querySelector('.chosen-movies').appendChild(movieSpan);
-        movieSpan.appendChild(addedMovie);
-        styleNumber++;
+          addedMovie.setAttribute('src', imgNode.currentSrc)
+          addedMovie.setAttribute('alt', imgNode.alt)      
+          document.querySelector('.chosen-movies').appendChild(movieSpan);
+          movieSpan.appendChild(addedMovie);
+          styleNumber++;
       }
     }
   }
 )}
-
-// Hide/Show Element function
-function toggleDiv() {
-  var x = document.getElementById("pi-info-div");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-}
