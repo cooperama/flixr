@@ -6,6 +6,8 @@ const db = require('../models');
 
 const moment = require('moment');
 
+// Reference Source: https://www.youtube.com/watch?v=6FOq4cUdH8k
+
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('users/login'));
 
